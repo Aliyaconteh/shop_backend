@@ -74,14 +74,9 @@ REST_FRAMEWORK = {
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('shop_db'),
-        'USER': os.environ.get('aliya'),
-        'PASSWORD': os.environ.get('TgNPyMKwvdk3OA4nWsZXkYJoQ4wTvIxX'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-    }
+    'default': dj_database_url.config(
+        default='postgresql://aliya:TgNPyMKwvdk3OA4nWsZXkYJoQ4wTvIxX@dpg-d20odgbe5dus738203ag-a.singapore-postgres.render.com/dhop_db'
+    )
 }
 
 STATIC_URL = '/static/'
