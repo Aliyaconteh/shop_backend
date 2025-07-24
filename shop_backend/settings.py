@@ -74,7 +74,14 @@ REST_FRAMEWORK = {
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('shop_db'),
+        'USER': os.environ.get('aliya'),
+        'PASSWORD': os.environ.get('TgNPyMKwvdk3OA4nWsZXkYJoQ4wTvIxX'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+    }
 }
 
 STATIC_URL = '/static/'
